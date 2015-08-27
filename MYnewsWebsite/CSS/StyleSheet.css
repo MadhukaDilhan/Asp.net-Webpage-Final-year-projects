@@ -1,0 +1,33 @@
+﻿body {
+    background-color:grey;
+}
+
+h1{
+    color:#9DDA52;
+    text-align:center;
+}
+
+a{
+    color:#C5BCBC;
+    font-size: x-large;
+
+}
+
+.header{
+    width: 1329px;
+    height: 127px;
+    display: inline-block;
+    background-color:black;
+    color: white;
+    border-radius: 10px;
+}
+
+.test1 {
+width: 438px;
+height: 200px;
+border-radius: 10px;
+background-color: black;
+display: inline-block;
+margin-left: 5px;
+color: white;
+}
