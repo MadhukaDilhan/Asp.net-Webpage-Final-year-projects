@@ -31,24 +31,80 @@ namespace MYnewsWebsite.newsFILE
             DataTable dt = new DataTable();
             da.Fill(dt);
 
+            //get data length ----------------
+
+            SqlCommand cmd = new SqlCommand("select count(*) from kk",con);
+            cmd.Connection.Open();
+            Div1.InnerHtml = cmd.ExecuteScalar().ToString();
+            int aa = Convert.ToInt32(cmd.ExecuteScalar().ToString());
+            cmd.Connection.Close();
+            //Div1.InnerHtml = "a";
 
             // --------------------------------html news body------------------------------------------
-            string html = "";
-            int i = 25;
-            while (i<45)
+            string html = "<table>";
+            int j = 27;
+            while (j < aa)
             {
-                html += "<div class=\"test" + 1 + "\">";
-                html += "<h2>";
-                html += dt.Rows[i][0].ToString() +" ";
-                html += "</h2>";
-                html += "<p>";
-                html += dt.Rows[i][2].ToString() + " ";
-                html += "</p>";
-                html += "</div>";
-                i++;
+
+                if (j % 3 == 0)
+                {
+                    html += "<tr>";
+                    html += "<th>";
+                    html += "<div class=\"test" + 1 + "\">";
+                    html += "<h2 class=\"test" + 2 + "\">";
+                    html += dt.Rows[j][0].ToString() + " ";
+                    html += "</h2>";
+                    html += "<p>";
+                    html += dt.Rows[j][2].ToString() + " ";
+                    html += "</p>";
+                    html += "<a href =\"" + dt.Rows[j][1].ToString() + "\">";
+                    html += "Read more";
+                    html += "</a>";
+                    html += "</div>";
+                    html += "</th>";
+                    j++;
+                }
+
+                if (j % 3 == 1)
+                {
+                    html += "<th>";
+                    html += "<div class=\"test" + 1 + "\">";
+                    html += "<h2 class=\"test" + 2 + "\">";
+                    html += dt.Rows[j][0].ToString() + " ";
+                    html += "</h2>";
+                    html += "<p>";
+                    html += dt.Rows[j][2].ToString() + " ";
+                    html += "</p>";
+                    html += "<a href =\"" + dt.Rows[j][1].ToString() + "\">";
+                    html += "Read more";
+                    html += "</a>";
+                    html += "</div>";
+                    html += "</th>";
+                    j++;
+                }
+
+                if (j % 3 == 2)
+                {
+                    html += "<th>";
+                    html += "<div class=\"test" + 1 + "\">";
+                    html += "<h2 class=\"test" + 2 + "\">";
+                    html += dt.Rows[j][0].ToString() + " ";
+                    html += "</h2>";
+                    html += "<p>";
+                    html += dt.Rows[j][2].ToString() + " ";
+                    html += "</p>";
+                    html += "<a href =\"" + dt.Rows[j][1].ToString() + "\">";
+                    html += "Read more";
+                    html += "</a>";
+                    html += "</div>";
+                    html += "</th>";
+                    html += "</tr>";
+                    j++;
+                }
             }
+            html += "</table>";
             news.InnerHtml = html;
-           //-----End of the news body----------------------------- 
+            //-----End of the news body----------------------------- 
             
         }
 

@@ -2,32 +2,40 @@
     background-color:grey;
 }
 
-h1{
-    color:#9DDA52;
+.headlable{
+    color:#EDFBCE;
     text-align:center;
 }
 
-a{
-    color:#C5BCBC;
+.headlink{
+    color:white;
     font-size: x-large;
 
 }
 
 .header{
-    width: 1329px;
-    height: 127px;
-    display: inline-block;
+    width: 1324px;
+    height: 98px;
+    
     background-color:black;
     color: white;
     border-radius: 10px;
 }
 
 .test1 {
-width: 438px;
-height: 200px;
-border-radius: 10px;
-background-color: black;
-display: inline-block;
-margin-left: 5px;
-color: white;
+    width: 434px;
+    height: 200px;
+    border-radius: 10px;
+    background-color: black;
+    display: inline-block;
+    margin-left: 5px;
+    color: white;
+}
+.test2
+{
+    color:#DE8787;
+}
+
+a{
+    color:white;
 }

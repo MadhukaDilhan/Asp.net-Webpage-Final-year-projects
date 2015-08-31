@@ -2,3 +2,4 @@ C:\Users\Madhuka Dilshan\Documents\Visual Studio 2012\Projects\MYnewsWebsite\MYn
 C:\Users\Madhuka Dilshan\Documents\Visual Studio 2012\Projects\MYnewsWebsite\MYnewsWebsite\bin\MYnewsWebsite.pdb
 C:\Users\Madhuka Dilshan\Documents\Visual Studio 2012\Projects\MYnewsWebsite\MYnewsWebsite\obj\Debug\MYnewsWebsite.dll
 C:\Users\Madhuka Dilshan\Documents\Visual Studio 2012\Projects\MYnewsWebsite\MYnewsWebsite\obj\Debug\MYnewsWebsite.pdb
+C:\Users\Madhuka Dilshan\documents\visual studio 2012\Projects\MYnewsWebsite\MYnewsWebsite\obj\Debug\MYnewsWebsite.csprojResolveAssemblyReference.cache

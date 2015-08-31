@@ -19,23 +19,75 @@ namespace MYnewsWebsite.newsFILE
         {
             if (!IsPostBack)
             {
-                SqlDataAdapter da = new SqlDataAdapter("select * from ARTICALS where Category_ID='5'", con);
+                SqlDataAdapter da = new SqlDataAdapter("select * from kk", con);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                Label1.Text = dt.Rows[0][0].ToString();
-                Label2.Text = dt.Rows[0][2].ToString();
 
-                Label3.Text = dt.Rows[1][0].ToString();
-                Label4.Text = dt.Rows[1][2].ToString();
+                // --------------------------------html news body------------------------------------------
+                string html = "<table>";
+                int j = 30;
+                while (j < 39)
+                {
 
-                Label5.Text = dt.Rows[2][0].ToString();
-                Label6.Text = dt.Rows[2][2].ToString();
+                    if(j%3 ==0)
+                    {
+                        html += "<tr>";
+                        html += "<th>";
+                        html += "<div class=\"test" + 1 + "\">";
+                        html += "<h2 class=\"test" + 2 + "\">";
+                        html += dt.Rows[j][0].ToString() + " ";
+                        html += "</h2>";
+                        html += "<p>";
+                        html += dt.Rows[j][2].ToString() + " ";
+                        html += "</p>";
+                        html += "<a href =\"" + dt.Rows[j][1].ToString() + "\">";
+                        html += "Read more";
+                        html += "</a>";
+                        html += "</div>";
+                        html += "</th>";
+                        j++;
+                    }
 
-                Label7.Text = dt.Rows[3][0].ToString();
-                Label8.Text = dt.Rows[3][2].ToString();
+                    else if (j % 3 == 1)
+                    {
+                        html += "<th>";
+                        html += "<div class=\"test" + 1 + "\">";
+                        html += "<h2 class=\"test" + 2 + "\">";
+                        html += dt.Rows[j][0].ToString() + " ";
+                        html += "</h2>";
+                        html += "<p>";
+                        html += dt.Rows[j][2].ToString() + " ";
+                        html += "</p>";
+                        html += "<a href =\"" + dt.Rows[j][1].ToString() + "\">";
+                        html += "Read more";
+                        html += "</a>";
+                        html += "</div>";
+                        html += "</th>";
+                        j++;
+                    }
 
-
-
+                    else if(j % 3 == 2)
+                    {
+                        html += "<th>";
+                        html += "<div class=\"test" + 1 + "\">";
+                        html += "<h2 class=\"test" + 2 + "\">";
+                        html += dt.Rows[j][0].ToString() + " ";
+                        html += "</h2>";
+                        html += "<p>";
+                        html += dt.Rows[j][2].ToString() + " ";
+                        html += "</p>";
+                        html += "<a href =\"" + dt.Rows[j][1].ToString() + "\">";
+                        html += "Read more";
+                        html += "</a>";
+                        html += "</div>";
+                        html += "</th>";
+                        html += "</tr>";
+                        j++;
+                    }
+                }
+                html += "</table>";
+                sport.InnerHtml = html;
+                //-----End of the news body----------------------------- 
 
             }
         }
