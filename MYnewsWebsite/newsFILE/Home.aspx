@@ -15,7 +15,10 @@
             <h1 class="headlable">ශ්‍රී ලංකා සිංහල පුවත් එකතුව</h1>
             <div class="headlink"><a href ="#">මුල් පිටුව</a> |  <a href ="Sport.aspx">ක්‍රිඩා පුවත්</a>  |
                     <a href ="Politics.aspx">දේශපාලන පුවත්</a> |  <a href ="Business.aspx">ව්‍යාපාරික පුවත්</a> |
-                    <a href ="DefenceAndLow.aspx">ආරක්ෂක හා නීති පුවත්</a> |  <a href ="ArtAndCulture.aspx">කලා හා සංස්කෘතික පුවත්</a> 
+                    <a href ="DefenceAndLow.aspx">ආරක්ෂක හා නීති පුවත්</a> |  <a href ="ArtAndCulture.aspx">කලා හා සංස්කෘතික පුවත්</a>
+                <div id="News_Add_Button">
+                    <asp:Button ID="Button1" runat="server" Text="ADD NEWS" OnClick="Button1_Click" />
+                </div> 
             </div>
          </div>
             <div  id="Div1" runat="server"></div> 

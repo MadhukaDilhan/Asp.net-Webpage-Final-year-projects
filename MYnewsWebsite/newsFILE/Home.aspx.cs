@@ -57,9 +57,10 @@ namespace MYnewsWebsite.newsFILE
                     html += "<p>";
                     html += dt.Rows[j][2].ToString() + " ";
                     html += "</p>";
-                    html += "<a href =\"" + dt.Rows[j][1].ToString() + "\">";
+                    html += "<a  href =\"" + dt.Rows[j][1].ToString() + "\">";
                     html += "Read more";
                     html += "</a>";
+                    html += "<footer><button>Like</button> <button>Comment</button></footer>";
                     html += "</div>";
                     html += "</th>";
                     j++;
@@ -78,6 +79,7 @@ namespace MYnewsWebsite.newsFILE
                     html += "<a href =\"" + dt.Rows[j][1].ToString() + "\">";
                     html += "Read more";
                     html += "</a>";
+                    html += "<footer><button>Like</button> <button>Comment</button></footer>";
                     html += "</div>";
                     html += "</th>";
                     j++;
@@ -96,6 +98,7 @@ namespace MYnewsWebsite.newsFILE
                     html += "<a href =\"" + dt.Rows[j][1].ToString() + "\">";
                     html += "Read more";
                     html += "</a>";
+                    html += "<footer><button id=\"test" + j + "\">Like</button> <button>Comment</button></footer>";
                     html += "</div>";
                     html += "</th>";
                     html += "</tr>";
@@ -106,6 +109,11 @@ namespace MYnewsWebsite.newsFILE
             news.InnerHtml = html;
             //-----End of the news body----------------------------- 
             
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Add_database/Add_News.aspx");
         }
 
     }

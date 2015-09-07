@@ -39,3 +39,9 @@
 a{
     color:white;
 }
+
+#News_Add_Button{
+    position: relative;
+    top: -86px;
+    right: -1184px;
+}
