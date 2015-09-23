@@ -61,6 +61,8 @@
     <Content Include="js\libs\jquery-1.11.1.js" />
     <Content Include="js\Script.js" />
     <Content Include="newsFILE\Add_Database\Add_News.aspx" />
+    <Content Include="newsFILE\Add_Database\login.aspx" />
+    <Content Include="newsFILE\Add_Database\Register.aspx" />
     <Content Include="newsFILE\ArtAndCulture.aspx" />
     <Content Include="newsFILE\Business.aspx" />
     <Content Include="newsFILE\DefenceAndLow.aspx" />
@@ -76,6 +78,20 @@
     </Compile>
     <Compile Include="newsFILE\Add_Database\Add_News.aspx.designer.cs">
       <DependentUpon>Add_News.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="newsFILE\Add_Database\login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="newsFILE\Add_Database\login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="newsFILE\Add_Database\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="newsFILE\Add_Database\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
     <Compile Include="newsFILE\ArtAndCulture.aspx.cs">
       <DependentUpon>ArtAndCulture.aspx</DependentUpon>

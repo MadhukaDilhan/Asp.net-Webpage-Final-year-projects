@@ -4,11 +4,17 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace MYnewsWebsite.newsFILE.Add_Database
 {
-    public partial class Add_News : System.Web.UI.Page
+
+    public partial class login : System.Web.UI.Page
+
     {
+        SqlConnection con = new SqlConnection("Data Source=DIL;Initial Catalog=finalyear;Integrated Security=True");
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -16,13 +22,9 @@ namespace MYnewsWebsite.newsFILE.Add_Database
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            String First_Name =  TextBox1.Text;
-            String Last_Name  =  TextBox2.Text;
-            String Email      =  TextBox3.Text;
+
 
             Response.Redirect("../Home.aspx");
-           
-
         }
     }
 }

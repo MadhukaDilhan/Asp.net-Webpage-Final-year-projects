@@ -19,14 +19,24 @@ namespace MYnewsWebsite.newsFILE
         {
             if (!IsPostBack)
             {
-                SqlDataAdapter da = new SqlDataAdapter("select * from kk", con);
+                SqlDataAdapter da = new SqlDataAdapter("select * from ARTI where catogory_id = 1", con);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
 
+                //get data length ----------------
+
+                SqlCommand cmd = new SqlCommand("select count(*) from ARTI where catogory_id = 1", con);
+                cmd.Connection.Open();
+                int aa = Convert.ToInt32(cmd.ExecuteScalar().ToString());
+                cmd.Connection.Close();
+               
+
+                // --------------------------------html news body------------------------------------------
+
                 // --------------------------------html news body------------------------------------------
                 string html = "<table>";
-                int j = 30;
-                while (j < 39)
+                int j = 0;
+                while (j < aa)
                 {
 
                     if(j%3 ==0)
@@ -90,6 +100,16 @@ namespace MYnewsWebsite.newsFILE
                 //-----End of the news body----------------------------- 
 
             }
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Add_database/Add_News.aspx");
+        }
+
+        protected void Buttonlog_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Add_database/login.aspx");
         }
     }
 }

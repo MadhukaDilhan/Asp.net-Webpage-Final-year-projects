@@ -36,12 +36,65 @@
     color:#DE8787;
 }
 
-a{
-    color:white;
+a:link {
+    color: white;
 }
 
-#News_Add_Button{
+/* visited link */
+a:visited {
+    color:  yellow;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00FF;
+}
+
+/* selected link */
+a:active {
+    color: white;
+}
+
+#addnews{
     position: relative;
-    top: -86px;
-    right: -1184px;
+    top: -57px;
+    right: -144px;
+    background: #DCE0A1;
+
+}
+
+#search{
+    position: relative;
+    top: -40px;
+    right: -1137px;
+}
+
+#login{
+    position: relative;
+    top: -82px;
+    right: 164px;
+}
+
+#signup{
+    position: relative;
+    top: -82px;
+    right: 160px;
+}
+
+.button{
+    width: 78px;
+	height: 40px;
+	background: #DCE0A1;
+	-moz-border-radius: 100px / 50px;
+	-webkit-border-radius: 100px / 50px;
+	border-radius: 100px / 50px;
+}
+
+button{
+    width: 60px;
+	height: 30px;
+	background: #DCE0A1;
+	-moz-border-radius: 100px / 50px;
+	-webkit-border-radius: 100px / 50px;
+	border-radius: 100px / 50px;
 }

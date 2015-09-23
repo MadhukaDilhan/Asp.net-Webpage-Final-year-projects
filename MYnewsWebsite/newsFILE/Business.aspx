@@ -17,6 +17,12 @@
             <div class="headlink"><a href ="Home.aspx">මුල් පිටුව</a> |  <a href ="Sport.aspx">ක්‍රිඩා පුවත්</a>  |
                  <a href ="Politics.aspx">දේශපාලන පුවත්</a> |  <a href ="Business.aspx">ව්‍යාපාරික පුවත්</a> |
                  <a href ="DefenceAndLow.aspx">ආරක්ෂක හා නීති පුවත්</a> |  <a href ="ArtAndCulture.aspx">කලා හා සංස්කෘතික පුවත්</a> 
+
+                <asp:Button ID="addnews" runat="server" Text="පුවත් ඇතුලත් කරන්න" OnClick="Button1_Click" />
+                    <input id="search" type="text" placeholder="සොයන්න" />
+
+                 <asp:Button ID="login" runat="server" Text="ඇතුලත්වීම" class="button" OnClick ="Buttonlog_Click"/>
+                      <asp:Button ID="signup" runat="server" Text="ලියාපදිංචිය" class="button"/>
             </div>
         </div>
         <h1>ව්‍යාපාරික පුවත්</h1>

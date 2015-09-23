@@ -27,22 +27,22 @@ namespace MYnewsWebsite.newsFILE
         private void Get_Data_From_Database()
         {
             
-            SqlDataAdapter da = new SqlDataAdapter("select * from kk", con);
+            SqlDataAdapter da = new SqlDataAdapter("select * from ARTI", con);
             DataTable dt = new DataTable();
             da.Fill(dt);
 
             //get data length ----------------
 
-            SqlCommand cmd = new SqlCommand("select count(*) from kk",con);
+            SqlCommand cmd = new SqlCommand("select count(*) from ARTI",con);
             cmd.Connection.Open();
             Div1.InnerHtml = cmd.ExecuteScalar().ToString();
             int aa = Convert.ToInt32(cmd.ExecuteScalar().ToString());
             cmd.Connection.Close();
-            //Div1.InnerHtml = "a";
+            Div1.InnerHtml = "a";
 
             // --------------------------------html news body------------------------------------------
             string html = "<table>";
-            int j = 27;
+            int j = 0;
             while (j < aa)
             {
 
@@ -58,15 +58,35 @@ namespace MYnewsWebsite.newsFILE
                     html += dt.Rows[j][2].ToString() + " ";
                     html += "</p>";
                     html += "<a  href =\"" + dt.Rows[j][1].ToString() + "\">";
-                    html += "Read more";
+                    html += "තවත් කියවන්න";
                     html += "</a>";
-                    html += "<footer><button>Like</button> <button>Comment</button></footer>";
+                    html += "<footer><button>කැමැත්ත</button> <button>අදහස්</button></footer>";
                     html += "</div>";
                     html += "</th>";
                     j++;
                 }
 
-                if (j % 3 == 1)
+                else if (j % 3 == 1)
+                {
+                    
+                    html += "<th>";
+                    html += "<div class=\"test" + 1 + "\">";
+                    html += "<h2 class=\"test" + 2 + "\">";
+                    html += dt.Rows[j][0].ToString() + " ";
+                    html += "</h2>";
+                    html += "<p>";
+                    html += dt.Rows[j][2].ToString() + " ";
+                    html += "</p>";
+                    html += "<a  href =\"" + dt.Rows[j][1].ToString() + "\">";
+                    html += "තවත් කියවන්න";
+                    html += "</a>";
+                    html += "<footer><button>කැමැත්ත</button> <button>අදහස්</button></footer>";
+                    html += "</div>";
+                    html += "</th>";
+                    j++;
+                }
+
+                else if (j % 3 == 2)
                 {
                     html += "<th>";
                     html += "<div class=\"test" + 1 + "\">";
@@ -77,28 +97,9 @@ namespace MYnewsWebsite.newsFILE
                     html += dt.Rows[j][2].ToString() + " ";
                     html += "</p>";
                     html += "<a href =\"" + dt.Rows[j][1].ToString() + "\">";
-                    html += "Read more";
+                    html += "තවත් කියවන්න";
                     html += "</a>";
-                    html += "<footer><button>Like</button> <button>Comment</button></footer>";
-                    html += "</div>";
-                    html += "</th>";
-                    j++;
-                }
-
-                if (j % 3 == 2)
-                {
-                    html += "<th>";
-                    html += "<div class=\"test" + 1 + "\">";
-                    html += "<h2 class=\"test" + 2 + "\">";
-                    html += dt.Rows[j][0].ToString() + " ";
-                    html += "</h2>";
-                    html += "<p>";
-                    html += dt.Rows[j][2].ToString() + " ";
-                    html += "</p>";
-                    html += "<a href =\"" + dt.Rows[j][1].ToString() + "\">";
-                    html += "Read more";
-                    html += "</a>";
-                    html += "<footer><button id=\"test" + j + "\">Like</button> <button>Comment</button></footer>";
+                    html += "<footer><button id=\"test" + j + "\">කැමැත්ත</button> <button>අදහස්</button></footer>";
                     html += "</div>";
                     html += "</th>";
                     html += "</tr>";
@@ -114,6 +115,16 @@ namespace MYnewsWebsite.newsFILE
         protected void Button1_Click(object sender, EventArgs e)
         {
             Response.Redirect("Add_database/Add_News.aspx");
+        }
+
+        protected void Buttonlog_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Add_database/login.aspx");
+        }
+
+        protected void Buttonreg_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Add_Database/Register.aspx");
         }
 
     }
